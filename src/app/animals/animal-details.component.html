@@ -1,0 +1,12 @@
+<h1>Animal Details</h1>
+
+<div>
+    
+     <h1>Price: {{animal.price}} </h1>
+     <h1>Likes: {{animal.like}} </h1>
+    <h2>Name: {{animal.name}}</h2> 
+    <h2>Age: {{animal.age}}</h2>
+    <h2>Breed: {{animal.breed}}</h2>
+    
+    <img *ngIf="animal.image" [src] ="animal.image"/>
+</div>

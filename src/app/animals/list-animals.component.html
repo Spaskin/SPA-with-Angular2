@@ -1,0 +1,22 @@
+<h1>List Animals</h1>
+
+
+<div class = "animal-container"> 
+    <div>
+        <input type="text" [(ngModel)]="searchText" name="searchText"/>
+        <button (click)="search()">Search</button>
+    </div>
+    <div *ngIf="animals.length === 0">
+        No more animals available!
+    </div>
+    <div *ngFor="let animal of animals">
+        {{animal.name}}{{animal.age}}
+        <img *ngIf="animal.image" [src]="animal.image"/>
+        <a routerLink="/animals/details/{{animal.id}}">See More</a>
+    </div>
+    <div>
+         <button [disabled]="page === 1" (click)="prevPage()">Prev</button>
+         <button [disabled]="animals.length ===0 || animals.length < 10" (click)="nextPage()">Next</button>
+        
+    </div>
+</div>
